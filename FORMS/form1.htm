@@ -5,10 +5,18 @@
 <h2>HTML Forms</h2>
 
 <form action="/action_page.php">
+
+    <!-- Label and Input for Username -->
   <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" placeholder="Enter your First Name"><br>
+  <input type="text" id="fname" name="fname" placeholder="Enter your First Name" required/><br>
   <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" placeholder="Enter your Last Name"><br><br>
+  <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" required/><br><br>
+  
+  <!-- Label and Input for Username -->
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" required/>
+ 
+  <!-- Button to submit the Form -->
   <input type="submit" value="Submit">
 </form> 
 
