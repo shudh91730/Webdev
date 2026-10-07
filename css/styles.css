@@ -1,0 +1,17 @@
+
+        header{
+            color: aqua;
+            font-size: 30px;
+        }
+        body{
+            font-family: Arial,sans-serif;
+            background-color: lightgrey;
+        }
+        h1{
+            color: bisque;
+        }
+
+        p{
+            font-size: 14px;
+            line-height: 1.5;
+        }
