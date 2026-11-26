@@ -7,10 +7,11 @@
     <style>
         .container{
             background-color: aqua;
-            color: rgb(255, 0, 0);
+            color: rgb(0, 30, 255);
             font-size: larger;
             height: 200px;
             width: 200px;
+            display: grid;
         }
         @media (min-width: 600px){
             .container{
@@ -27,12 +28,17 @@
                 width: 600px;
                 text-align: center;
             }
+            .content:hover{
+                color: black;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        Learning media query and its use-methods.
+        <p class="content">
+            Learning media query and its use-methods.
+        </p>
     </div>
 </body>
 </html>

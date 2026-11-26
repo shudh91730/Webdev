@@ -11,23 +11,29 @@
     border-radius: 5px;
     width: 91px;
     height: 100px;   
-    transition: width 2s, height 2s, background-color 2s, rotate 2s, transform 1s;
+    transition: width 2s, height 2s, background-color 2s, rotate 2s, transform 1s, border-radius 5s;
     }
     .box1:hover{
-       width: 50%;
+       width: 500px;
        height: 500px;
        background-color: blueviolet;
        rotate: 90deg;
-       transition-timing-function: ease;
+       transition-timing-function: ease-out;
+       border-radius: 100%;
+       align-content: center;
+       align-items: center;
+    }
+    .boxin{
+        
     }
     .box2:hover{
         transition-timing-function: ease-in;
         rotate: -90deg;
-
     }
     .box3:hover{
         transition-timing-function: ease-out;
         rotate: 90deg;
+
 
     }
     .box4:hover{
@@ -35,12 +41,13 @@
         /* rotate: 90deg; */
         transform: rotate(90deg);
 
+
     }
     </style>
 </head>
 <body>
     <div class="box1">
-        <h1>(>☺︎<)</h1>
+        <div class="boxin"><h1>(>☺︎<)</h1></div>
     </div>
     <div class="box2">
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Border Sweep Card</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #09090b;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Outer wrapper handles the soft ambient glow */
+    .card-wrapper {
+      position: relative;
+      padding: 3px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(255, 0, 85, 0.2), 0 0 80px rgba(0, 240, 255, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .card-wrapper:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    /* Rotating conic gradient that forms the laser border */
+    .card-wrapper::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        #ff0055 90deg,
+        #ffcc00 180deg,
+        #00f0ff 270deg,
+        transparent 360deg
+      );
+      animation: spin-border 3s linear infinite;
+    }
+
+    /* Inner dark card body that masks the center */
+    .neon-card {
+      position: relative;
+      width: 300px;
+      padding: 32px 24px;
+      background: #111114;
+      border-radius: 14px;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .neon-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .neon-card p {
+      font-size: 0.95rem;
+      color: #a1a1aa;
+      line-height: 1.5;
+    }
+
+    @keyframes spin-border {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-wrapper">
+    <div class="neon-card">
+      <h2>Mission Passed</h2>
+      <p>Clean GPU-accelerated border sweep with an ambient

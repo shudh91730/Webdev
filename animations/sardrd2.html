@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Double Vision Text</title>
+  <style>
+    body {
+      min-height: 100vh;
+      background: #050505;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      font-family: system-ui, sans-serif;
+    }
+
+    .dizzy-text {
+      position: relative;
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      animation: wobble 1.6s ease-in-out infinite alternate;
+    }
+
+    .dizzy-text::before,
+    .dizzy-text::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: screen;
+    }
+
+    .dizzy-text::before {
+      color: #ff003c;
+      animation: drift-left 0.9s ease-in-out infinite alternate;
+    }
+
+    .dizzy-text::after {
+      color: #00f0ff;
+      animation: drift-right 1.1s ease-in-out infinite alternate;
+    }
+
+    @keyframes wobble {
+      0% { transform: skewX(-12deg) scale(1); filter: blur(0px); }
+      50% { transform: skewX(12deg) scale(1.08); filter: blur(1.5px); }
+      100% { transform: skewX(-8deg) scale(0.95); filter: blur(0px); }
+    }
+
+    @keyframes drift-left {
+      0% { transform: translate(-12px, -6px) rotate(-3deg); }
+      100% { transform: translate(14px, 8px) rotate(4deg); }
+    }
+
+    @keyframes drift-right {
+      0% { transform: translate(12px, 6px) rotate(3deg); }
+      100% { transform: translate(-14px, -8px) rotate(-4deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="dizzy-text" data-text="FOCUS ON ME">FOCUS ON ME</h1>
+</body>
+</html>
